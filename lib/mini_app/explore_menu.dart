@@ -31,14 +31,14 @@ class _MenuSectionState extends State<MenuSection> {
     }
   }
 
-  int count_1 = 0;
-  int count_2 = 0;
-  int count_3 = 0;
-  int count_4 = 0;
-  int count_5 = 0;
-  int count_6 = 0;
-  int count_7 = 0;
-  int count_8 = 0;
+  int count_1 = 1;
+  int count_2 = 1;
+  int count_3 = 1;
+  int count_4 = 1;
+  int count_5 = 1;
+  int count_6 = 1;
+  int count_7 = 1;
+  int count_8 = 1;
 
   int amount_1 = 150;
   int amount_2 = 130;
@@ -115,7 +115,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_1 <= 0 ? count_1 = 0 : count_1--;
+                                      count_1 <= 1 ? count_1 = 1 : count_1--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_1 Items",
@@ -123,7 +123,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Items",
+                                        messageText: Text("Rs.${amount_1/count_1}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -219,7 +219,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_2 <= 0 ? count_2 = 0 : count_2--;
+                                      count_2 <= 1 ? count_2 = 1 : count_2--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_2 Items",
@@ -227,7 +227,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Rs.80",
+                                        messageText: Text("Rs.${amount_2/count_2}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -323,7 +323,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_3 <= 0 ? count_3 = 0 : count_3--;
+                                      count_3 <= 1 ? count_3 = 1 : count_3--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_3 Items",
@@ -331,7 +331,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Rs.80",
+                                        messageText: Text("Rs.${amount_3/count_3}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -427,7 +427,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_4 <= 0 ? count_4 = 0 : count_4--;
+                                      count_4 <= 1 ? count_4 = 1 : count_4--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_4 Items",
@@ -435,7 +435,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Rs.80",
+                                        messageText: Text("Rs.${amount_4/count_4}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -531,7 +531,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_5 <= 0 ? count_5 = 0 : count_5--;
+                                      count_5 <= 1 ? count_5 =1 : count_5--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_5 Items",
@@ -539,7 +539,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Rs.80",
+                                        messageText: Text("Rs.${amount_5/count_5}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -635,7 +635,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_6 <= 0 ? count_6 = 0 : count_6--;
+                                      count_6 <= 1 ? count_6 = 1 : count_6--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_6 Items",
@@ -643,7 +643,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Rs.80",
+                                        messageText: Text("Rs.${amount_6/count_6}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -739,7 +739,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_7 <= 0 ? count_7 = 0 : count_7--;
+                                      count_7 <= 1 ? count_7 = 1 : count_7--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_7 Items",
@@ -747,7 +747,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Rs.80",
+                                        messageText: Text("Rs.${amount_7/count_7}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -843,7 +843,7 @@ class _MenuSectionState extends State<MenuSection> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      count_8 <= 0 ? count_8 = 0 : count_8--;
+                                      count_8 <= 1 ? count_8 = 1 : count_8--;
                                       Get.showSnackbar(GetSnackBar(
                                         titleText: Text(
                                           "You Added $count_8 Items",
@@ -851,7 +851,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        message: "Rs.80",
+                                        messageText: Text("Rs.${amount_8/count_8}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
