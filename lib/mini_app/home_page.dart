@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 import 'package:ivin_screens/mini_app/d_payment.dart';
 import 'package:ivin_screens/mini_app/explore_menu.dart';
 import 'package:ivin_screens/mini_app/follow_us.dart';
@@ -13,41 +15,72 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  int _currentIndex = 0;
+
+  void onTabPressed(index) {
+    setState(() {
+      _currentIndex = index;
+      print(_currentIndex);
+    });
+    if (index == 0) {
+      // Navigator.pushNamed(context, '/home');
+      Get.offNamed('/home');
+    } else if (index == 1) {
+      // Navigator.pushNamed(context, '/explore_menu');
+      Get.offNamed('/explore_menu');
+    } else if (index == 2) {
+      Get.offNamed('/payment');
+      // Navigator.pushNamed(context, '/payment');
+    } else {
+      Get.offAllNamed('/login');
+      // Navigator.pushNamed(context, '/login');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text("Swiggy"),
+        title: const Text("Foody App"),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Container(
-            child: Image.asset(
-              "assets/img/chapati.jpg",
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Container(
+              child: Image.asset(
+                "assets/img/chapati.jpg",
+              ),
             ),
-          ),
-          const Text(
-            "Get Delicious Food Anytime",
-            style: TextStyle(
-                color: Colors.pink, fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-          const Text(
-            "Eat Smart & Healthy",
-            style: TextStyle(
-                color: Colors.green, fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            child: ElevatedButton(
-              onPressed: () {
-               Navigator.pushNamed(context, '/explore_menu');
-              },
-              child: Text("Order Now"),
+            const Text(
+              "Get Delicious Food Anytime",
+              style: TextStyle(
+                  color: Colors.pink,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold),
             ),
-          )
-        ],
+            const Text(
+              "Eat Smart & Healthy",
+              style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  // Navigator.pushNamed(context, '/explore_menu');
+                  Get.toNamed('/explore_menu');
+                },
+                child: Text("Order Now"),
+              ),
+            )
+          ],
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -59,10 +92,24 @@ class _MyHomePageState extends State<MyHomePage> {
               child: CircleAvatar(
                   backgroundColor: Colors.white,
                   child: Image.asset(
-                    "assets/img/Swiggy-logo.png",
-                    width: 190,
+                    "assets/img/app_logo.png",
+                    width: 150,
                   )),
             )),
+            ListTile(
+              title: Text(
+                "Home",
+                style: TextStyle(color: Colors.deepOrange, fontSize: 18),
+              ),
+              leading: Icon(
+                Icons.home,
+                color: Colors.cyan,
+                size: 30,
+              ),
+              onTap: () {
+                Get.toNamed('/home');
+              },
+            ),
             ListTile(
               title: Text(
                 "Why Choose Us",
@@ -74,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: 30,
               ),
               onTap: () {
-                Navigator.pushNamed(context,'/wcu');
+                Get.toNamed('/wcu');
               },
             ),
             ListTile(
@@ -86,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: 30,
               ),
               onTap: () {
-                Navigator.pushNamed(context,'/explore_menu');
+                Get.toNamed('/explore_menu');
               },
             ),
             ListTile(
@@ -101,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: 30,
               ),
               onTap: () {
-                Navigator.pushNamed(context,'/payment');
+                Get.toNamed('/payment');
               },
             ),
             ListTile(
@@ -113,11 +160,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: 30,
               ),
               onTap: () {
-               Navigator.pushNamed(context,'/follow_us');
+                Get.toNamed('/follow_us');
               },
             ),
             Padding(
-                padding: EdgeInsets.only(top: 320),
+                padding: EdgeInsets.only(top: 330),
                 child: ListTile(
                   title: Text(
                     "Logout",
@@ -129,13 +176,29 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.red,
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, '/logout');
+                    Get.offAllNamed('/logout');
                   },
-                  autofocus: true,
                 )),
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
+        selectedItemColor: Colors.deepOrange,
+        unselectedItemColor: Colors.grey,
+        showSelectedLabels: true,
+        currentIndex: _currentIndex,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home_sharp,color: _currentIndex==0? Colors.deepOrange:Colors.grey,), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.restaurant_menu,color: _currentIndex==1? Colors.deepOrange:Colors.grey,), label: "Menu"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet,color: _currentIndex==2? Colors.deepOrange:Colors.grey,), label: "Payment"),
+          BottomNavigationBarItem(icon: Icon(Icons.logout,color: _currentIndex==3? Colors.deepOrange:Colors.grey,), label: "Logout"),
+        ],
+        onTap:(index) =>  onTabPressed(index),
+      ),
     );
   }
 }
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ivin_screens/mini_app/home_page.dart';
 
 class Logout extends StatelessWidget {
@@ -14,7 +15,7 @@ class Logout extends StatelessWidget {
             Text("Logout Successful",style: TextStyle(color: Colors.teal,fontSize: 50,fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
           Text("To Log Back Again Click on Login Button"),
           ElevatedButton(onPressed: (){
-            Navigator.pushNamed(context,'/login');
+            Get.offAllNamed('/login');
           }, child:Text("Login"))
           ],
         ),

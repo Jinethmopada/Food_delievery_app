@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class PaymentSuccess extends StatelessWidget {
   const PaymentSuccess({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class PaymentSuccess extends StatelessWidget {
             child: Text("Payment Success",style: TextStyle(color: Colors.green,fontSize:60,fontWeight: FontWeight.w700),textAlign:TextAlign.center,),
           ),
           ElevatedButton(onPressed: (){
-            Navigator.pop(context);
+            Get.back();
           }, child: Text("Back"))
         ],
       ),

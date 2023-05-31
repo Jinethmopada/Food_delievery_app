@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyLoginForm extends StatefulWidget {
   const MyLoginForm({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class MyLoginForm extends StatefulWidget {
 
 class _MyLoginFormState extends State<MyLoginForm> {
   final _formKey = GlobalKey<FormState>();
-  String email = "jineth@gmail.com";
+  String email = "test@gmail.com";
   String password = "3241";
   bool showPassword = false;
   // TextEditingController _email = TextEditingController();
@@ -21,7 +22,7 @@ class _MyLoginFormState extends State<MyLoginForm> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding:
-            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.top),
         child: SafeArea(
           child: Center(
             child: Form(
@@ -117,7 +118,7 @@ class _MyLoginFormState extends State<MyLoginForm> {
                       //   return null;
                       // }
                       if(_formKey.currentState!.validate()){
-                        Navigator.pushNamed(context,'/home');
+                        Get.offAllNamed('/home');
                       }
                     },
                     child: Text("Submit"),
