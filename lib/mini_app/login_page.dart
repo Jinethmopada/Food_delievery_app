@@ -22,7 +22,7 @@ class _MyLoginFormState extends State<MyLoginForm> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding:
-            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.top),
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: SafeArea(
           child: Center(
             child: Form(

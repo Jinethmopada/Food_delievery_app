@@ -15,7 +15,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int _currentIndex = 0;
 
   void onTabPressed(index) {
@@ -33,7 +32,33 @@ class _MyHomePageState extends State<MyHomePage> {
       Get.offNamed('/payment');
       // Navigator.pushNamed(context, '/payment');
     } else {
-      Get.offAllNamed('/login');
+      setState(() {
+        Get.dialog(AlertDialog(
+          title: Text(
+            "Alert",
+          ),
+          content: Text("Are you sure you want to logout"),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Get.back();
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Cancel"),
+                    InkWell(
+                      child: Text("Logout"),
+                      onTap: () {
+                        Get.offAllNamed('/login');
+                      },
+                    )
+                  ],
+                ))
+          ],
+        ));
+      });
+      // Get.offAllNamed('/login');
       // Navigator.pushNamed(context, '/login');
     }
   }
@@ -176,7 +201,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.red,
                   ),
                   onTap: () {
-                    Get.offAllNamed('/logout');
+                    setState(() {
+                      Get.dialog(AlertDialog(
+                        title: Text(
+                          "Alert",
+                        ),
+                        content: Text("Are you sure you want to logout"),
+                        actions: [
+                          TextButton(
+                              onPressed: () {
+                                Get.offAllNamed('/logout');
+                              },
+                              child: Text("Logout"))
+                        ],
+                      ));
+                    });
                   },
                 )),
           ],
@@ -189,16 +228,33 @@ class _MyHomePageState extends State<MyHomePage> {
         showSelectedLabels: true,
         currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home_sharp,color: _currentIndex==0? Colors.deepOrange:Colors.grey,), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.restaurant_menu,color: _currentIndex==1? Colors.deepOrange:Colors.grey,), label: "Menu"),
+              icon: Icon(
+                Icons.home_sharp,
+                color: _currentIndex == 0 ? Colors.deepOrange : Colors.grey,
+              ),
+              label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet,color: _currentIndex==2? Colors.deepOrange:Colors.grey,), label: "Payment"),
-          BottomNavigationBarItem(icon: Icon(Icons.logout,color: _currentIndex==3? Colors.deepOrange:Colors.grey,), label: "Logout"),
+              icon: Icon(
+                Icons.restaurant_menu,
+                color: _currentIndex == 1 ? Colors.deepOrange : Colors.grey,
+              ),
+              label: "Menu"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_balance_wallet,
+                color: _currentIndex == 2 ? Colors.deepOrange : Colors.grey,
+              ),
+              label: "Payment"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.logout,
+                color: _currentIndex == 3 ? Colors.deepOrange : Colors.grey,
+              ),
+              label: "Logout"),
         ],
-        onTap:(index) =>  onTabPressed(index),
+        onTap: (index) => onTabPressed(index),
       ),
     );
   }
 }
-
