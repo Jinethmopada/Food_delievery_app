@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         Get.dialog(AlertDialog(
           title: Text(
-            "Alert",
+            "Logout",
           ),
           content: Text("Are you sure you want to logout"),
           actions: [
@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       Get.dialog(AlertDialog(
                         title: Text(
-                          "Alert",
+                          "Logout",
                         ),
                         content: Text("Are you sure you want to logout"),
                         actions: [
@@ -258,3 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+
+

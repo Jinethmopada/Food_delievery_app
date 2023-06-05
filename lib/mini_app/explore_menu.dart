@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class MenuSection extends StatefulWidget {
   const MenuSection({Key? key}) : super(key: key);
@@ -14,7 +17,6 @@ class _MenuSectionState extends State<MenuSection> {
   void onTabPressed(index) {
     setState(() {
       _currentIndex = index;
-      print(_currentIndex);
     });
     if (index == 0) {
       // Navigator.pushNamed(context, '/home');
@@ -49,6 +51,7 @@ class _MenuSectionState extends State<MenuSection> {
   int amount_7 = 150;
   int amount_8 = 100;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +67,100 @@ class _MenuSectionState extends State<MenuSection> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                 InkWell(child:
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: Column(
+                     children: [
+                       CircleAvatar(backgroundImage: AssetImage('assets/img/fish_image.jpg'),radius: 53,),
+                       Text("Sea Food",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                     ],
+                   ),
+                 ),
+                   onTap: (){
+                   Get.toNamed('/sea_food');
+                   },
+                 ),
+                  InkWell(child:
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CircleAvatar(backgroundImage: AssetImage('assets/img/chicken_img.jpg'),radius: 53,),
+                        Text("Chicken",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                      ],
+                    ),
+                  ),
+                    onTap: (){
+                      Get.toNamed('/chicken');
+                    },
+                  ),
+                  InkWell(child:
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CircleAvatar(backgroundImage: AssetImage('assets/img/mutton_image.jpg'),radius: 53,),
+                        Text("Mutton",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                      ],
+                    ),
+                  ),
+                    onTap: (){
+                      Get.toNamed('/mutton');
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(child:
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CircleAvatar(backgroundImage: AssetImage('assets/img/dessert_image.jpg'),radius: 53,),
+                        Text("Desserts",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                      ],
+                    ),
+                  ),
+                    onTap: (){
+                      Get.toNamed('/dessert');
+                    },
+                  ),
+                  InkWell(child:
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CircleAvatar(backgroundImage: AssetImage('assets/img/starter_image.jpg'),radius: 53,),
+                        Text("Starters",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                      ],
+                    ),
+                  ),
+                    onTap: (){
+                      Get.toNamed('/starter');
+                    },
+                  ),
+                  InkWell(child:
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CircleAvatar(backgroundImage: AssetImage('assets/img/pasta_image.jpg'),radius: 53,),
+                        Text("Pasta",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                      ],
+                    ),
+                  ),
+                    onTap: (){
+                      Get.toNamed('/pasta');
+                    },
+                  ),
+                ],
+              ),
               Container(
                 width: 250,
                 height: 320,
@@ -84,9 +181,7 @@ class _MenuSectionState extends State<MenuSection> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(18.0),
-                      child: Image.asset(
-                        "assets/img/1.png",
-                      ),
+                      child: Image.asset("assets/img/1.png"),
                     ),
                     Row(
                       children: [
@@ -123,7 +218,7 @@ class _MenuSectionState extends State<MenuSection> {
                                               color: Colors.black87,
                                               fontSize: 20),
                                         ),
-                                        messageText: Text("Rs.${amount_1/count_1}"),
+                                        messageText: Text("Rs.${amount_1~/count_1}"),
                                         duration: Duration(seconds: 1),
                                         backgroundColor: Colors.greenAccent,
                                       ));
@@ -150,7 +245,7 @@ class _MenuSectionState extends State<MenuSection> {
                                                 color: Colors.black87,
                                                 fontSize: 20),
                                           ),
-                                          messageText: Text(
+                                          messageText:Text(
                                             "Rs.${amount_1 * count_1}",
                                             style: TextStyle(
                                                 color: Colors.black87,

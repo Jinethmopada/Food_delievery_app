@@ -117,9 +117,9 @@ class _MyLoginFormState extends State<MyLoginForm> {
                       // } else{
                       //   return null;
                       // }
-                      if(_formKey.currentState!.validate()){
+                      // if(_formKey.currentState!.validate()){
                         Get.offAllNamed('/home');
-                      }
+                      //}
                     },
                     child: Text("Submit"),
                   )
