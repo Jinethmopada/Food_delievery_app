@@ -56,7 +56,7 @@ class _FoodItemsScreenState extends State<FoodItemsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Food Items'),
+        title: Text('Sea Food Items'),
       ),
       body:isLoading ?
       Center(
