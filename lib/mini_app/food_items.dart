@@ -60,7 +60,10 @@ class _FoodItemsScreenState extends State<FoodItemsScreen> {
       ),
       body:isLoading ?
       Center(
-        child:CircularProgressIndicator(),
+        child:LinearProgressIndicator(
+          backgroundColor: Colors.red,
+          valueColor: AlwaysStoppedAnimation(Colors.green),
+        ),
       ):
         ListView.builder(
           itemCount: foodItems.length,
