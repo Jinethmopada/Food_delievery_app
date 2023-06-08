@@ -67,99 +67,105 @@ class _MenuSectionState extends State<MenuSection> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                 InkWell(child:
-                 Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: Column(
-                     children: [
-                       CircleAvatar(backgroundImage: AssetImage('assets/img/fish_image.jpg'),radius: 53,),
-                       Text("Sea Food",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
-                     ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                   InkWell(child:
+                   Padding(
+                     padding: const EdgeInsets.all(8.0),
+                     child: Column(
+                       children: [
+                         CircleAvatar(backgroundImage: AssetImage('assets/img/fish_image.jpg'),radius: 53,),
+                         Text("Sea Food",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                       ],
+                     ),
                    ),
-                 ),
-                   onTap: (){
-                   Get.toNamed('/sea_food');
-                   },
-                 ),
-                  InkWell(child:
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        CircleAvatar(backgroundImage: AssetImage('assets/img/chicken_img.jpg'),radius: 53,),
-                        Text("Chicken",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
-                      ],
+                     onTap: (){
+                     Get.toNamed('/sea_food');
+                     },
+                   ),
+                    InkWell(child:
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundImage: AssetImage('assets/img/chicken_img.jpg'),radius: 53,),
+                          Text("Chicken",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                        ],
+                      ),
                     ),
-                  ),
-                    onTap: (){
-                      Get.toNamed('/chicken');
-                    },
-                  ),
-                  InkWell(child:
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        CircleAvatar(backgroundImage: AssetImage('assets/img/mutton_image.jpg'),radius: 53,),
-                        Text("Mutton",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
-                      ],
+                      onTap: (){
+                        Get.toNamed('/chicken');
+                      },
                     ),
-                  ),
-                    onTap: (){
-                      Get.toNamed('/mutton');
-                    },
-                  ),
-                ],
+                    InkWell(child:
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundImage: AssetImage('assets/img/mutton_image.jpg'),radius: 53,),
+                          Text("Mutton",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                        ],
+                      ),
+                    ),
+                      onTap: (){
+                        Get.toNamed('/mutton');
+                      },
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(child:
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        CircleAvatar(backgroundImage: AssetImage('assets/img/dessert_image.jpg'),radius: 53,),
-                        Text("Desserts",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
-                      ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(child:
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundImage: AssetImage('assets/img/dessert_image.jpg'),radius: 53,),
+                          Text("Desserts",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                        ],
+                      ),
                     ),
-                  ),
-                    onTap: (){
-                      Get.toNamed('/dessert');
-                    },
-                  ),
-                  InkWell(child:
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        CircleAvatar(backgroundImage: AssetImage('assets/img/starter_image.jpg'),radius: 53,),
-                        Text("Starters",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
-                      ],
+                      onTap: (){
+                        Get.toNamed('/dessert');
+                      },
                     ),
-                  ),
-                    onTap: (){
-                      Get.toNamed('/starter');
-                    },
-                  ),
-                  InkWell(child:
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        CircleAvatar(backgroundImage: AssetImage('assets/img/pasta_image.jpg'),radius: 53,),
-                        Text("Pasta",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
-                      ],
+                    InkWell(child:
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundImage: AssetImage('assets/img/starter_image.jpg'),radius: 53,),
+                          Text("Starters",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                        ],
+                      ),
                     ),
-                  ),
-                    onTap: (){
-                      Get.toNamed('/pasta');
-                    },
-                  ),
-                ],
+                      onTap: (){
+                        Get.toNamed('/starter');
+                      },
+                    ),
+                    InkWell(child:
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundImage: AssetImage('assets/img/pasta_image.jpg'),radius: 53,),
+                          Text("Pasta",style: TextStyle(color: Colors.orange,fontSize: 20,fontWeight:FontWeight.bold),),
+                        ],
+                      ),
+                    ),
+                      onTap: (){
+                        Get.toNamed('/pasta');
+                      },
+                    ),
+                  ],
+                ),
               ),
               Container(
                 width: 250,

@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Named Routes',
+      title: 'Foody APP',
       initialRoute: '/login',
       getPages: [
         GetPage(name:'/home', page:() => MyHomePage(),transition: Transition.circularReveal,transitionDuration: Duration(seconds:1)),

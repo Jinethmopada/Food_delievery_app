@@ -60,7 +60,7 @@ class _FoodItemsScreenState extends State<FoodItemsScreen> {
       ),
       body:isLoading ?
       Center(
-        child:LinearProgressIndicator(
+        child:CircularProgressIndicator(
           backgroundColor: Colors.red,
           valueColor: AlwaysStoppedAnimation(Colors.green),
         ),
